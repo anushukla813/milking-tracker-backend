@@ -4,6 +4,7 @@ COPY pom.xml .
 COPY .mvn .mvn
 COPY mvnw .
 COPY src ./src
+RUN chmod +x mvnw
 RUN ./mvnw clean install -DskipTests
 FROM eclipse-temurin:21-jre-alpine
 ENV PORT 8080
